@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/var/www
+    ports:
+      - 3000:3000
+  grpc-test:
+    image: gusaul/grpcox:latest
+    ports:
+      - 6969:6969
